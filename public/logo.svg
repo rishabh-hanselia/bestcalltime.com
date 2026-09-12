@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120" fill="none">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#10b981" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Logo Mark Container -->
+  <g transform="translate(16, 12)" filter="url(#subtleShadow)">
+    <!-- Base App Rounded Container -->
+    <rect x="0" y="0" width="96" height="96" rx="24" fill="#0f172a"/>
+    <rect x="0" y="0" width="96" height="96" rx="24" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- Clock / Meridian Dial Track -->
+    <circle cx="48" cy="48" r="32" stroke="#1e293b" stroke-width="4" fill="#090d16" fill-opacity="0.6"/>
+    
+    <!-- Timezone Overlap Sector Arc (Highlighted Synchrony Segment) -->
+    <path d="M 48 16 A 32 32 0 0 1 80 48" stroke="url(#emeraldGrad)" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Secondary Timezone Arc Ring -->
+    <circle cx="48" cy="48" r="23" stroke="#334155" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Clock Hands Intersecting to Form Perfect Call Time -->
+    <!-- Hour Hand pointing at 10:45 window -->
+    <line x1="48" y1="48" x2="30" y2="34" stroke="#e2e8f0" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Minute Hand pointing up-right into the emerald overlap zone -->
+    <line x1="48" y1="48" x2="65" y2="28" stroke="url(#accentGlow)" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Center Pivot Pin with Pulse Core -->
+    <circle cx="48" cy="48" r="5.5" fill="#10b981"/>
+    <circle cx="48" cy="48" r="2" fill="#ffffff"/>
+
+    <!-- Signal / Sync Sparkle Dot indicating Mutual Availability -->
+    <circle cx="73" cy="23" r="3" fill="#34d399"/>
+  </g>
+
+  <!-- Typography: "Best Call Time" -->
+  <g transform="translate(132, 0)">
+    <!-- Main Brandmark -->
+    <text x="0" y="62" font-family="Plus Jakarta Sans, system-ui, -apple-system, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.03em" fill="#0f172a">
+      Best Call <tspan fill="#10b981">Time</tspan>
+    </text>
+
+    <!-- Subtitle / Brand Descriptor -->
+    <text x="2" y="88" font-family="Plus Jakarta Sans, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.12em" fill="#64748b">
+      TIMEZONE OVERLAP &amp; CALL FINDER
+    </text>
+
+    <!-- Micro Mutual Overlap Dot Indicator -->
+    <circle cx="282" cy="84" r="3" fill="#10b981"/>
+  </g>
+</svg>
