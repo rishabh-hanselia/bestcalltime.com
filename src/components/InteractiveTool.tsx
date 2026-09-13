@@ -41,16 +41,7 @@ export function InteractiveTool() {
     ]);
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    const state: AppState = {
-      users,
-      durationRequiredSeconds: duration.hours * 3600 + duration.minutes * 60 + duration.seconds
-    };
-    window.location.hash = encodeState(state);
-  }, [users, duration, mounted]);
-
-
+  const [copied, setCopied] = useState(false);
 
   const minDurationSeconds = duration.hours * 3600 + duration.minutes * 60 + duration.seconds;
   const mutualOverlaps = useMemo(() => calculateOverlap(users, minDurationSeconds), [users, minDurationSeconds]);
@@ -58,6 +49,18 @@ export function InteractiveTool() {
   const handleReset = () => {
     window.location.hash = '';
     window.location.reload();
+  };
+
+  const handleShare = () => {
+    const state: AppState = {
+      users,
+      durationRequiredSeconds: minDurationSeconds
+    };
+    const hash = encodeState(state);
+    const url = `${window.location.origin}${window.location.pathname}#${hash}`;
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const addUser = () => {
@@ -121,14 +124,18 @@ export function InteractiveTool() {
                 </div>
                 <p className="font-body-md text-body-md text-on-surface-variant mt-0.5">{t.description}</p>
               </div>
-              <div className="flex flex-wrap items-center gap-space-sm w-full lg:w-auto justify-between lg:justify-end">
-                <div className="flex items-center gap-2">
-                  <button onClick={handleReset} className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-xl font-label-md text-label-md shadow-sm transition-all" type="button">
-                    <span className="material-symbols-outlined text-[18px]">restart_alt</span>
-                    <span>{t.reset}</span>
-                  </button>
+                <div className="flex flex-wrap items-center gap-space-sm w-full lg:w-auto justify-between lg:justify-end">
+                  <div className="flex items-center gap-2">
+                    <button onClick={handleShare} className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl font-label-md text-label-md shadow-sm transition-all" type="button">
+                      <span className="material-symbols-outlined text-[18px]">{copied ? 'check' : 'share'}</span>
+                      <span>{copied ? (t.copied || 'Copied!') : (t.share || 'Share')}</span>
+                    </button>
+                    <button onClick={handleReset} className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-xl font-label-md text-label-md shadow-sm transition-all" type="button">
+                      <span className="material-symbols-outlined text-[18px]">restart_alt</span>
+                      <span>{t.reset}</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
             </section>
 
             {mounted && (

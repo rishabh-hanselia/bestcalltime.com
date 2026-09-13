@@ -16,6 +16,8 @@ export const DICTIONARY: Record<string, Record<string, any>> = {
     privacy: 'Privacy',
     terms: 'Terms',
     feedback: 'Feedback',
+    share: 'Share',
+    copied: 'Copied!',
 
     // OverlapResult
     zestMatch: 'Overlapping time found',
