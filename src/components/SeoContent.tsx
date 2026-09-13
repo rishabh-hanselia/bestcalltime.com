@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { SEO_DICTIONARY } from '@/lib/i18n-seo';
 
 export default function SeoContent({ lang }: { lang: string }) {
@@ -10,7 +10,7 @@ export default function SeoContent({ lang }: { lang: string }) {
       {/* Section 1: How to Use */}
       <section className="flex flex-col gap-8">
         <div className="text-center space-y-4">
-          <h2 className="font-display-lg text-headline-lg md:text-display-sm font-bold text-on-surface">How to Use Best Call Time</h2>
+          <h2 className="font-display-lg text-headline-lg md:text-display-sm font-bold text-on-surface">How to Use the Timezone Overlap Calculator</h2>
           <p className="text-on-surface-variant font-body-lg max-w-2xl mx-auto">
             Find the perfect time to meet without doing complex timezone math.
           </p>
@@ -21,21 +21,21 @@ export default function SeoContent({ lang }: { lang: string }) {
             <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-title-lg">1</div>
             <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">Add Your Locations & Time Zones</h3>
             <p className="text-on-surface-variant text-body-md leading-relaxed">
-              Select your local city or timezone and add one or more target participants across the globe.
+              Select your local city or timezone and add one or more target participants across the globe to our international meeting scheduler.
             </p>
           </div>
           <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm">
             <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-title-lg">2</div>
             <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">Define Reasonable Hours</h3>
             <p className="text-on-surface-variant text-body-md leading-relaxed">
-              The tool highlights standard waking and working windows (e.g., 8:00 AM to 9:00 PM) to ensure no one receives midnight pings or predawn alarms.
+              The tool highlights standard mutual waking hours and working windows (e.g., 8:00 AM to 9:00 PM) to ensure no one receives midnight pings or predawn alarms during remote team syncs.
             </p>
           </div>
           <div className="flex flex-col items-start gap-4 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm">
             <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-title-lg">3</div>
             <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">Identify the Overlap Window</h3>
             <p className="text-on-surface-variant text-body-md leading-relaxed">
-              Instantly view the mutual green overlap slot. Click or hover on any slot to see the exact corresponding local time in all participants' zones simultaneously.
+              Instantly view the mutual green overlap slot. Click or hover on any slot to see the exact corresponding local time in all participants' zones simultaneously for seamless global collaboration.
             </p>
           </div>
         </div>
@@ -44,6 +44,9 @@ export default function SeoContent({ lang }: { lang: string }) {
       {/* Section 2: Corridors */}
       <section className="flex flex-col gap-8">
         <h2 className="font-display-lg text-headline-lg font-bold text-on-surface border-b border-outline-variant/30 pb-4">Popular International Calling Corridors</h2>
+        <p className="text-on-surface-variant font-body-lg">
+          Compare overlapping business hours and find the best international call schedule for global remote teams.
+        </p>
         <div className="overflow-x-auto rounded-2xl border border-outline-variant/40 shadow-sm">
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
@@ -81,6 +84,29 @@ export default function SeoContent({ lang }: { lang: string }) {
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      {/* Section 2.5: US to India Guide */}
+      <section className="flex flex-col gap-6 p-8 rounded-3xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm">
+        <h2 className="font-display-lg text-headline-lg font-bold text-on-surface">Best Time to Call From the US to India (EST & PST Guide)</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface mb-3">From US East Coast (EST / EDT) to India (IST)</h3>
+            <ul className="list-disc pl-5 space-y-2 text-on-surface-variant text-body-md">
+              <li><strong>Standard Difference:</strong> India is 9.5 hours ahead during Daylight Saving Time (EDT) and 10.5 hours ahead during Standard Time (EST).</li>
+              <li><strong>Golden Window:</strong> <strong>7:00 AM – 9:30 AM EST</strong>, which maps to <strong>4:30 PM – 7:00 PM IST</strong> in India. This is the optimal window for remote standups and client check-ins before India offices close.</li>
+              <li><strong>Evening Alternative (Personal / Family):</strong> <strong>8:00 PM – 10:30 PM EST</strong>, which aligns with <strong>5:30 AM – 8:00 AM IST</strong> the following morning.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface mb-3">From US West Coast (PST / PDT) to India (IST)</h3>
+            <ul className="list-disc pl-5 space-y-2 text-on-surface-variant text-body-md">
+              <li><strong>Standard Difference:</strong> India is 12.5 hours ahead during PDT and 13.5 hours ahead during PST.</li>
+              <li><strong>Golden Window:</strong> <strong>8:00 PM – 10:30 PM PST</strong>, which aligns with <strong>8:30 AM – 11:00 AM IST</strong> the following morning in India (ideal for morning handoffs).</li>
+              <li><strong>Early Window:</strong> <strong>6:30 AM – 8:00 AM PST</strong>, which corresponds to <strong>7:00 PM – 8:30 PM IST</strong> in India.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -124,6 +150,18 @@ export default function SeoContent({ lang }: { lang: string }) {
             <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">{seoData.faq5Q}</h3>
             <p className="text-on-surface-variant text-body-md leading-relaxed">{seoData.faq5A}</p>
           </div>
+          {seoData.faq6Q && (
+            <div className="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col gap-3">
+              <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">{seoData.faq6Q}</h3>
+              <p className="text-on-surface-variant text-body-md leading-relaxed">{seoData.faq6A}</p>
+            </div>
+          )}
+          {seoData.faq7Q && (
+            <div className="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col gap-3">
+              <h3 className="font-headline-sm text-title-lg font-semibold text-on-surface">{seoData.faq7Q}</h3>
+              <p className="text-on-surface-variant text-body-md leading-relaxed">{seoData.faq7A}</p>
+            </div>
+          )}
         </div>
       </section>
 

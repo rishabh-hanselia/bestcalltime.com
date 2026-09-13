@@ -1,7 +1,7 @@
-﻿export const SEO_DICTIONARY: Record<string, Record<string, string>> = {
+export const SEO_DICTIONARY: Record<string, Record<string, string>> = {
   en: {
     seoTitle: "Best Call Time – Timezone Meeting & Call Planner",
-    seoDescription: "Easily find overlapping waking and working hours across time zones. Calculate mutual call windows between cities worldwide without waking anyone up.",
+    seoDescription: "Visual timezone overlap calculator and international call planner. Easily find overlapping working hours and schedule meetings across time zones without waking anyone up.",
     faq1Q: "How does Best Call Time calculate overlaps across midnight?",
     faq1A: "The engine maps schedules across a continuous 48-hour relative timeline. It tracks whether a call falling on Tuesday evening in New York registers as Wednesday morning in Tokyo, preventing date-confusion errors.",
     faq2Q: "Does this calculator account for Daylight Saving Time (DST)?",
@@ -11,7 +11,11 @@
     faq4Q: "What is considered a safe international call window?",
     faq4A: "A safe window generally spans 8:00 AM to 9:00 PM in each participant's respective local time, with optimal professional meetings falling between 9:00 AM and 5:00 PM.",
     faq5Q: "Is my location or calendar data saved or tracked?",
-    faq5A: "No. All calculations run entirely client-side in your browser. Best Call Time does not require account creation, access to your calendar, or storage of personal scheduling details."
+    faq5A: "No. All calculations run entirely client-side in your browser. Best Call Time does not require account creation, access to your calendar, or storage of personal scheduling details.",
+    faq6Q: "Can I use Best Call Time as a world clock meeting planner for remote teams?",
+    faq6A: "Yes. Best Call Time functions as a visual world clock meeting planner, allowing distributed teams across multiple continents to identify shared office and waking hours with zero manual math.",
+    faq7Q: "What is the best time to call from the US to India without waking anyone up?",
+    faq7A: "The best mutual window between the US and India depends on your coast. For the US East Coast (EST), the ideal time is 7:30 AM – 9:30 AM EST (5:00 PM – 7:00 PM IST). For the US West Coast (PST), the optimal time is 8:00 PM – 10:00 PM PST, which reaches India during their early morning (8:30 AM – 10:30 AM IST the next day)."
   },
   es: {
     seoTitle: "Best Call Time – Calculadora de Horarios para Llamadas Internacionales",

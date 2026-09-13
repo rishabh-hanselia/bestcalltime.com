@@ -3,7 +3,7 @@ export const DICTIONARY: Record<string, Record<string, any>> = {
     title: 'Best Call Time',
     subtitle: 'Find the Best Time to Call Across Time Zones',
     badge: 'Multi-Person Instant Calculator',
-    description: 'Calculate overlapping working hours and find the perfect call window without waking anyone up.',
+    description: 'A free timezone overlap calculator and international call planner. Find mutual working and waking hours between remote teams, clients, and family worldwide.',
     reset: 'Reset',
     addPerson: 'Add Person',
     addAnotherTitle: 'Add Another Person',

@@ -106,6 +106,14 @@ export function InteractiveTool() {
     }));
   };
 
+  const setPreset = (tz1: string, tz2: string, name1: string, name2: string) => {
+    setUsers([
+      { id: 'u1', name: name1, timezone: tz1, isBusyMode: false, slots: [] },
+      { id: 'u2', name: name2, timezone: tz2, isBusyMode: false, slots: [] }
+    ]);
+    window.scrollTo({ top: 300, behavior: 'smooth' });
+  };
+
   return (
     <>
       
@@ -123,6 +131,12 @@ export function InteractiveTool() {
                   <span className="font-mono-time text-label-md px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-medium border border-primary/30">{t.badge}</span>
                 </div>
                 <p className="font-body-md text-body-md text-on-surface-variant mt-0.5">{t.description}</p>
+                <div className="flex flex-wrap items-center gap-2 mt-4">
+                  <span className="px-3 py-1 bg-surface-container-lowest text-on-surface-variant text-label-sm rounded-full border border-outline-variant/30 hover:bg-surface-container transition-colors cursor-default">World Clock Meeting Planner</span>
+                  <span className="px-3 py-1 bg-surface-container-lowest text-on-surface-variant text-label-sm rounded-full border border-outline-variant/30 hover:bg-surface-container transition-colors cursor-default">Cross-Timezone Overlap Finder</span>
+                  <span className="px-3 py-1 bg-surface-container-lowest text-on-surface-variant text-label-sm rounded-full border border-outline-variant/30 hover:bg-surface-container transition-colors cursor-default">Business Hours Converter</span>
+                  <span className="px-3 py-1 bg-surface-container-lowest text-on-surface-variant text-label-sm rounded-full border border-outline-variant/30 hover:bg-surface-container transition-colors cursor-default">Zero Daylight Saving Drift</span>
+                </div>
               </div>
                 <div className="flex flex-wrap items-center gap-space-sm w-full lg:w-auto justify-between lg:justify-end">
                   <div className="flex items-center gap-2">
@@ -141,6 +155,16 @@ export function InteractiveTool() {
             {mounted && (
               <>
                 <OverlapResult overlaps={mutualOverlaps} users={users} duration={duration} setDuration={setDuration} language={language} />
+
+                {/* Corridor Quick Links */}
+                <div className="w-full flex flex-wrap items-center gap-2 mb-space-md mt-6 justify-center sm:justify-start">
+                  <span className="text-label-md text-on-surface-variant font-medium mr-2">Quick Routes:</span>
+                  <button onClick={() => setPreset('America/New_York', 'Asia/Kolkata', 'US (EST)', 'India (IST)')} className="px-3 py-1.5 bg-surface-container hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-on-surface-variant text-label-sm rounded-full border border-outline-variant/40 transition-colors shadow-sm">🇺🇸 US (EST) ↔ 🇮🇳 India (IST)</button>
+                  <button onClick={() => setPreset('America/Los_Angeles', 'Asia/Kolkata', 'US (PST)', 'India (IST)')} className="px-3 py-1.5 bg-surface-container hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-on-surface-variant text-label-sm rounded-full border border-outline-variant/40 transition-colors shadow-sm">🇺🇸 US (PST) ↔ 🇮🇳 India (IST)</button>
+                  <button onClick={() => setPreset('Europe/London', 'America/New_York', 'UK (GMT)', 'US (EST)')} className="px-3 py-1.5 bg-surface-container hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-on-surface-variant text-label-sm rounded-full border border-outline-variant/40 transition-colors shadow-sm">🇬🇧 UK (GMT) ↔ 🇺🇸 US (EST)</button>
+                  <button onClick={() => setPreset('Europe/London', 'Asia/Kolkata', 'UK (GMT)', 'India (IST)')} className="px-3 py-1.5 bg-surface-container hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-on-surface-variant text-label-sm rounded-full border border-outline-variant/40 transition-colors shadow-sm">🇬🇧 UK (GMT) ↔ 🇮🇳 India (IST)</button>
+                  <button onClick={() => setPreset('Australia/Sydney', 'America/Los_Angeles', 'Australia (AEST)', 'US (PST)')} className="px-3 py-1.5 bg-surface-container hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-on-surface-variant text-label-sm rounded-full border border-outline-variant/40 transition-colors shadow-sm">🇦🇺 Australia (AEST) ↔ 🇺🇸 US (PST)</button>
+                </div>
 
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-space-lg my-space-md items-stretch justify-items-center sm:justify-items-start">
                   {users.map(user => (

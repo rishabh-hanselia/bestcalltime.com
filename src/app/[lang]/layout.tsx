@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
           url: OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: "Best Call Time - Visual timezone overlap calculator and international meeting planner interface",
         },
       ],
     },
@@ -167,6 +167,28 @@ export default async function RootLayout({
       },
     ],
   };
+
+  if (seoData.faq6Q && seoData.faq6A) {
+    faqSchema.mainEntity.push({
+      "@type": "Question",
+      name: seoData.faq6Q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: seoData.faq6A,
+      },
+    });
+  }
+
+  if (seoData.faq7Q && seoData.faq7A) {
+    faqSchema.mainEntity.push({
+      "@type": "Question",
+      name: seoData.faq7Q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: seoData.faq7A,
+      },
+    });
+  }
 
   return (
     <html lang={lang}>
