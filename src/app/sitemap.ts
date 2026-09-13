@@ -1,4 +1,6 @@
-﻿import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['en', 'es', 'fr', 'de', 'it', 'pt', 'zh', 'ja', 'hi', 'ar', 'ru'];
